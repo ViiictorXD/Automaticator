@@ -1,0 +1,5 @@
+name: Automaticator
+version: 1.0.0
+api-version: 1.8
+main: com.github.zmathi.automaticator.Automaticator
+author: zMathi

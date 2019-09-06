@@ -1,0 +1,12 @@
+automaticator:
+  repeat:
+    example:
+      time: 10
+      commands:
+        - say Isso será repetido a cada 10 segundos.
+  timer:
+    example:
+      day: quarta
+      time: 4 19
+      commands:
+        - say Isso foi executado exatamente às 04:19
