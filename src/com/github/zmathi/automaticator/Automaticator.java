@@ -34,10 +34,6 @@ public class Automaticator extends JavaPlugin {
         Bukkit.getScheduler().runTaskTimerAsynchronously(this, repeatTask, 20, 20);
     }
 
-    @Override
-    public void onDisable() {
-    }
-
     public static Automaticator getAutomaticator() {
         return automaticator;
     }
