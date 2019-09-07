@@ -10,6 +10,7 @@ import java.util.Calendar;
 public class RepeatTask implements Runnable {
 
     private static final String[] WEEK = { "Sábado", "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta" };
+    private static final Calendar CALENDAR = Calendar.getInstance();
     private RepeatManager repeatManager;
     private TimerManager timerManager;
 
@@ -27,10 +28,8 @@ public class RepeatTask implements Runnable {
             }
         }
 
-        Calendar calendar = Calendar.getInstance();
-
-        String WEEK_DAY = WEEK[calendar.get(Calendar.DAY_OF_WEEK)].toLowerCase();
-        String TIME_NOW = calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE) + ":" + calendar.get(Calendar.SECOND);
+        String WEEK_DAY = WEEK[CALENDAR.get(Calendar.DAY_OF_WEEK)].toLowerCase();
+        String TIME_NOW = CALENDAR.get(Calendar.HOUR_OF_DAY) + ":" + CALENDAR.get(Calendar.MINUTE) + ":" + CALENDAR.get(Calendar.SECOND);
         for (Timer timer : timerManager.getTimers()) {
             if (timer.getDay().equalsIgnoreCase(WEEK_DAY) && timer.getTime().equalsIgnoreCase(TIME_NOW)) {
                 timer.run();
