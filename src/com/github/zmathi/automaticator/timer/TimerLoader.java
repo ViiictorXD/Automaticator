@@ -22,13 +22,10 @@ public class TimerLoader {
         for (String configPath : configSection.getKeys(false)) {
             String day = configSection.getString(configPath + ".day");
             String time = configSection.getString(configPath + ".time").replace(" ", ":") + ":0";
-
             List<String> commands = Lists.newArrayList();
             if (configSection.contains(configPath + ".commands")) {
                 commands.addAll(configSection.getStringList(configPath + ".commands"));
             }
-
-            System.out.println(day + " = " + time);
 
             Timer timer = new Timer(day, time, commands);
             timerManager.getTimers().add(timer);
