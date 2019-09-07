@@ -40,9 +40,7 @@ public class Repeat {
                 if (command != null && !command.isEmpty()) {
                     if (command.contains("{player}")) {
                         for (Player player : Bukkit.getOnlinePlayers()) {
-                            command = command.replace("{player}", player.getName());
-
-                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
+                            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command.replace("{player}", player.getName()));
                         }
                         continue;
                     }
